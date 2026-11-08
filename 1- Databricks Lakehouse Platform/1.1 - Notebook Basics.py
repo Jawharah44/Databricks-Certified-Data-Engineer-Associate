@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "6"
+# ///
 print("Hello World!")
 
 # COMMAND ----------
@@ -69,5 +73,4 @@ print(files)
 display(files)
 
 # COMMAND ----------
-
 

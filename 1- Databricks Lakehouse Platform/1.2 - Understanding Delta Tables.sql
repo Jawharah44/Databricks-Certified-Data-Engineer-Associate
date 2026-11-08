@@ -4,16 +4,11 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
--- MAGIC **Note:** If your workspace does not support the `hive_metastore` catalog, switch to the **unity-catalog** branch in this Git Folder.
+USE CATALOG workspace
 
 -- COMMAND ----------
 
-USE CATALOG hive_metastore
-
--- COMMAND ----------
-
-CREATE TABLE employees
+CREATE OR REPLACE TABLE employees
   (id INT, name STRING, salary DOUBLE);
 
 -- COMMAND ----------
@@ -114,7 +109,3 @@ DESCRIBE HISTORY employees
 -- COMMAND ----------
 
 -- MAGIC %fs head 'dbfs:/user/hive/warehouse/employees/_delta_log/00000000000000000005.json'
-
--- COMMAND ----------
-
-
