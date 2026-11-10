@@ -4,17 +4,23 @@
 
 -- COMMAND ----------
 
-USE CATALOG hive_metastore;
+show catalogs
 
-CREATE TABLE managed_default
-  (width INT, length INT, height INT);
+-- COMMAND ----------
 
+USE CATALOG workspace;
+
+Create table managed_default
 INSERT INTO managed_default
 VALUES (3 INT, 2 INT, 1 INT)
 
 -- COMMAND ----------
 
 DESCRIBE EXTENDED managed_default
+
+-- COMMAND ----------
+
+DESCRIBE DETAIL workspace.default.managed_default;
 
 -- COMMAND ----------
 
@@ -30,6 +36,14 @@ LOCATION 'dbfs:/mnt/demo/external_default';
   
 INSERT INTO external_default
 VALUES (3 INT, 2 INT, 1 INT)
+
+-- COMMAND ----------
+
+SHOW EXTERNAL LOCATIONS;
+
+-- COMMAND ----------
+
+SHOW CATALOGS;
 
 -- COMMAND ----------
 
